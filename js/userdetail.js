@@ -35,7 +35,7 @@ var users = [
 ]
 
 var display = function() {
-    var id = document.getElementById("nbr").nodeValue;
+    var id = document.getElementById("nbr").value;
     var selectedUser;
     for(var user of users) {
         if(user.id == id) {
@@ -44,8 +44,8 @@ var display = function() {
     }
     set("pid", selectedUser.id);
     document.getElementById("pname").innerText = `${selectedUser.firstname} ${selectedUser.lastname}`;
-    document.getElementById("pisreviewer").innerText = `${selectedUser.isReviewer ? Yes : No}`;
-    document.getElementById("pisadmin").innerText = `${selectedUser.isAdmin ? Yes : No}`;
+    document.getElementById("pisreviewer").innerText = `${selectedUser.isReviewer ? "Yes" : "No"}`;
+    document.getElementById("pisadmin").innerText = `${selectedUser.isAdmin ? "Yes" : "No"}`;
 }
 
 var set = (pid, val) => {
