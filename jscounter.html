@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="js/jscounter.js"></script>
+</head>
+<body onload="loaded()" style="background-color: magenta">
+    <div>
+        
+    </div>
+    <div>
+        <button id="sub" style="background-color:rgb(253, 38, 0); font-size: 22px" 
+                onclick="increment(-100)">---</button>
+        <button id="sub" style="background-color:rgb(255, 166, 0); font-size: 17px" 
+                onclick="increment(-1)">-</button>
+        <input readonly id="nbr" type="number" value="0" 
+                style="background-color: gold; text-align: center; width: 10%">
+        <button id="add" style="background-color: rgb(68, 221, 29); font-size: 17px" 
+                onclick="increment(1)">+</button>
+        <button id="add" style="background-color: rgb(3, 197, 245); font-size: 22px" 
+                onclick="increment(100)">+++</button>
+        <br>
+        <br>
+        <button id="clear" onclick="document.getElementById('nbr').value = 0" 
+                style="background-color: black; color: white; border-radius: 12px; width: 22%;
+                font-size: 30px">
+            <span style='color:burlywood'>ʕ •ᴥ•ʔ  </span>
+            <span style='color: rgb(255, 255, 255)'>~</span>
+            <span style='color: blue'>C</span>
+            <span style='color: rgb(251, 255, 0)'>L</span>
+            <span style='color: rgb(16, 226, 241)'>E</span>
+            <span style='color: rgb(60, 255, 0)'>A</span>
+            <span style='color: rgb(255, 0, 0)'>R</span>
+            <span style='color: rgb(255, 255, 255)'>~ </span>
+        </button>
+    </div>
+    <br>
+    <div>
+    </div>
+</body>
+</html>
