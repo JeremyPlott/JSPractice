@@ -1,3 +1,4 @@
+var arr = [ [], [], [] ]
 var frames = [];
     
 var loaded = () => {
@@ -5,13 +6,17 @@ var loaded = () => {
     Display();
 }
 const genScores = () => {
-    var total = 0;
-    for(var i = 0; i < 10; i++) {
-        var score = Math.floor(Math.random() * 31);
-        frames.push(score);
-        total += score;
-    }
-    frames.push(total);
+    for(var j = 0; j < 3; j++) { // playing around with 3 games
+        
+        var total = 0;
+        for(var i = 0; i < 10; i++) {
+            var score = Math.floor(Math.random() * 31);
+            frames.push(score);
+            total += score;
+        }
+        frames.push(total);
+        j++;
+    }    
 }
 const Display = () => {
     for(var i = 0; i < 11; i++) {
