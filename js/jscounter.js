@@ -48,13 +48,12 @@ var display = () => {
         document.getElementById("td9").style.backgroundColor = "black"
     }
 }
-var clear = () => {
-    document.getElementById('nbr').value = 0;
-    counter = 0;
-    display();
-}
 var increment = (x) => {
     counter += x;
+    display();
+}
+var reset = () => {
+    counter = 0;
     display();
 }
 var loaded = () => {

@@ -1,4 +1,4 @@
-var users = [
+var xusers = [
     {
         "id": 1,
         "username": "adm",
@@ -34,13 +34,10 @@ var users = [
     }
 ]
 
-function refresh() {
+function refresh(users) {
     var tbodyCtrl = document.getElementById("tbody");
     tbodyCtrl.innerHTML = "";
     for(var user of users) {
-        if(!user.isAdmin) {
-            continue;
-        }
         var tr = "<tr>";
         tr += `<td>${user.id}</td>`
         tr += `<td>${user.username}</td>`
@@ -53,13 +50,22 @@ function refresh() {
     }
 }
 
-var rncol = getRandomColor();
+const getUsers = () => {
+    let url = "http://localhost:50288/api/users";
+    $.getJSON(url)
+        .done( (res) => {
+            console.log(res);
+            refresh(res);
+        });
+};
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+// var rncol = getRandomColor();
+
+// function getRandomColor() {
+//     var letters = '0123456789ABCDEF';
+//     var color = '#';
+//     for (var i = 0; i < 6; i++) {
+//       color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+// }
